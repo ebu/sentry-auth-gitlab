@@ -4,8 +4,23 @@ v0.1.0
 
 An SSO provider for Sentry which enables GitLab Login
 
+EBU Changes
+-----------
+
+Automatic sentry's team membership is managed using gitlab's groups.
+
+This is done at login, fetching user's groups and setting team membership, if needed.
+
+The team name and the groupe name must be exactily the same, case included.
+
+This won't works if the user has more than 100 gitlab's groups.
+
+Gitlab's administrators have access to all groups.
+
+Team membership are not removed is the user is removed from a gitlab group.
+
 Changes made for Gitlab 9.x
-----------
+---------------------------
 Following configuration has been changed
 
 .. code-block:: python
