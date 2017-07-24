@@ -7,7 +7,7 @@ from sentry.auth.providers.oauth2 import (
 from .constants import (
     AUTHORIZE_URL, ACCESS_TOKEN_URL, CLIENT_ID, CLIENT_SECRET, SCOPE
 )
-from .views import FetchUser
+from .views import FetchUser, SetTeams
 
 
 class GitLabOAuth2Provider(OAuth2Provider):
@@ -20,7 +20,8 @@ class GitLabOAuth2Provider(OAuth2Provider):
                 access_token_url=ACCESS_TOKEN_URL,
                 client_id=CLIENT_ID, client_secret=CLIENT_SECRET,
             ),
-            FetchUser()
+            FetchUser(),
+            SetTeams()
         ]
 
     def get_refresh_token_url(self):

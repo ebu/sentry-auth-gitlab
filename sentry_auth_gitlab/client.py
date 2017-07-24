@@ -28,3 +28,6 @@ class GitLabClient(object):
 
     def get_user(self, access_token):
         return self._request('user', access_token)
+
+    def get_groups(self, access_token):
+        return self._request('groups?all_available=false&per_page=100', access_token)
